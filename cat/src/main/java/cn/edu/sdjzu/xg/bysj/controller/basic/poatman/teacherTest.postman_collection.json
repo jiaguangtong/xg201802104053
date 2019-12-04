@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "e09ea96a-b3af-4865-8e79-34d2503b69d3",
+		"name": "teacherTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/teacher1.ctl?id=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher1.ctl?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher1.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:8080/teacher1.ctl",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher1.ctl?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher1.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher1.ctl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher1.ctl",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"name\":\"王五\",\n\t\"proftitle_id\":2,\n\t\"degree_id\":2,\n\t\"department_id\":3\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher1.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher1.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT http://localhost:8080/teacher1.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a26e41be-4e44-4399-8ba4-14642f338584",
+						"exec": [
+							"var jsonDate = JSON.parse(responseBody);",
+							"tests[\"修改成功？\"] = jsonDate.message === \"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"degree\": {\r\n        \"description\": \"硕士\",\r\n        \"id\": 3,\r\n        \"no\": \"015\",\r\n        \"remarks\": \"20\"\r\n    },\r\n    \"department\": {\r\n        \"description\": \"博士后\",\r\n        \"id\": 4,\r\n        \"no\": \"001\",\r\n        \"remarks\": \"02\",\r\n        \"school\": {\r\n            \"description\": \"05\",\r\n            \"id\": 4,\r\n            \"no\": \"工程管理\",\r\n            \"remarks\": \"管理学院\"\r\n        }\r\n    },\r\n    \"id\": 3,\r\n    \"name\": \"李勇\",\r\n    \"title\": {\r\n        \"description\": \"本科生\",\r\n        \"id\": 3,\r\n        \"no\": \"021\",\r\n        \"remarks\": \"08\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher1.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher1.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
